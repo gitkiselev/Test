@@ -1,0 +1,39 @@
+/* прибьём футер к низу*/
+html, body {
+	height: 100%;
+}
+* {
+	box-sizing: border-box;
+}
+
+html {
+	overflow-y: scroll;
+	font-family: ElektraLightPro;
+}
+.wrapper{
+	/*position: relative;*/
+	min-height: 100%;
+	height: auto!important;
+	overflow: hidden;
+	min-width: 1200px;
+}
+.wrapper:after {
+	content: "";
+	height: 238px;
+	display: block;
+}
+.page-footer{
+	height: 238px;
+	min-width: 1200px;
+	margin-top: -238px;	
+}
+/* прибьём футер к низу - конец*/
+/*clearfix*/
+.clearfix:before,
+.clearfix:after {
+	content: '';
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
