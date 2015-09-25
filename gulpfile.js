@@ -12,8 +12,7 @@ var gulp        = require('gulp'),
     autoprefixer = require('gulp-autoprefixer');
 
 
-// Default task
-gulp.task('default', ['server', 'watch']);
+
 
 // Run server
 gulp.task('server', function() {
@@ -43,6 +42,9 @@ gulp.task('default', function () {
         }))
         .pipe(gulp.dest('dist'));
 });
+
+// Default task
+gulp.task('default', ['server', 'watch']);
 /************СБОРКА****************/
 
 // Очистка папки DIST
@@ -106,7 +108,7 @@ gulp.task('server-dist', function () {
         notify: false,
         port: 9000,
         server: {
-          baseDir: './dist'
+          baseDir: 'app'
         }
     });
 });
