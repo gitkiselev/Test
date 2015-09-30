@@ -1,11 +1,15 @@
 /* прибьём футер к низу*/
 html, body {
 	height: 100%;
+	font-family: 'Open Sans', sans-serif;
 }
 * {
 	box-sizing: border-box;
 }
-
+@font-face {
+    font-family: Bebas; /* Гарнитура шрифта */
+    src: url(../fonts/BEBAS___.ttf); /* Путь к файлу со шрифтом */
+   }
 html {
 	overflow-y: scroll;
 	font-family: ElektraLightPro;
@@ -42,55 +46,291 @@ html {
 	width: 940px;
 	margin: 0 auto;
 }
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
 /*Уберем пробелы между дочерними инлайн-блоками*/
 .inb-null {
 	font-size: 0px;
 }
 .like {
-	font-size: 24px;
-	padding: 2px 30px;
-	color: black;
-	text-decoration: none;
-	border: 2px solid blue;
-	border-radius: 5px;
+	width: 70px;
 	display: inline-block;
-	width: auto;
-	transition: all 0.6s;
-	
 }
-.like:hover {
-	cursor: pointer;
-	background: #4BE297;
-	color: black;
+
+.like__icon {
+	display: inline-block;
 }
 .number {
 	position: relative;
 	display: inline-block;
-	width: 120px;
-	height: 50px;
-	font-size: 45px;
+	width: 31px;
+	height: 22px;
+	font-size: 13px;
 	color: black;
-	margin: 15px;
-	margin-left: 50px;
-	/*padding: 6px 40px;*/
-	border-radius: 4px;
-	border: 3px solid green;
-	text-align: center;
-	line-height: 44px;
+	line-height: 22px;
 }
 .number:before {
 	content: '';
 	position: absolute;
 	z-index: 100;
-	top: -3px;
-	left: -3px;
+	top: 0px;
+	left: 0px;
 	display: block;
-	width: 120px;
-	height: 50px;
-	border-radius: 4px;
-	/*background-color: rgba(75, 226, 151, 0.5);*/
+	width: 31px;
+	height: 22px;
 	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 1) 100%);
+}
+/*******************HEADER***********************/
+.header {
+	padding-top: 26px;
+	margin-bottom: 40px;/*вернемся*/
+}
+.header__logo {
+	float: left;
+	width: 267px;
+	height: 56px;
+}
+.header__services {
+	float: right;
+	width:670px;/**/
+	margin-right: -150px;
+}
+.search,
+.map,
+.enter {
+	position: relative;
+	display: inline-block;
+	margin-right: 78px;
+	
+}
+.search__link,
+.map__link,
+.enter__link {
+	font-size: 16px;
+	color: #000;
+	font-weight: bold;
+}
+.search__info,
+.map__info,
+.enter__info {
+	font-size: 12px;
+	color: #A3A3A8;
+}
+.search:before {
+	content: '';
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	background-image: url(../img/search.png);
+	top: 0px;
+	left: -45px;
+}
+.map:before {
+	content: '';
+	position: absolute;
+	width: 25px;
+	height: 35px;
+	background-image: url(../img/map.png);
+	top: 0px;
+	left: -35px;
+}
+.enter:before {
+	content: '';
+	position: absolute;
+	width: 33px;
+	height: 35px;
+	background-image: url(../img/enter.png);
+	top: 0px;
+	left: -40px;
+}
+/**********HEADER-NAV*****************/
+/*.header-nav nav {
+	display: inline-block;
+}*/
+.header-nav {
+	margin-bottom: 23px;
+}
+.header-nav nav {
+	display: inline-block;
+}
+.header-nav__list {
+	float: left;
+}
+.header-nav__promo-list {
+	float: right;
+}
+.header-nav__item {
+	float: left;
+	margin-right: 37px;
+}
+.header-nav__item:last-child {
+	margin-right: 0;
+}
+.header-nav__promo-item {
+	float: right;
+	margin-left: 101px;
+	
+}
+.header-nav__promo-item:first-child {
+	margin-left: 37px;
+}
+.header-nav__promo-item:last-child {
+	margin-right: 0;
+	padding-left: 21px;
+	background: url(../img/bonus-star.png) left center no-repeat;
+}
+.header-nav__link,
+.header-nav__promo-link {
+	font-size: 14px;
+	line-height: 22px;
+	color: #124E9C;
+	
+}
+.header-nav__link:hover,
+.header-nav__promo-link:hover {
+	text-decoration: none;
+	color: #000;
+}
+/*************GALLERY*****************/
+.like {
+	width: 71px;
+	text-align: center;
+	cursor: pointer;
+}
+.number {
+	overflow: hidden;
+	font-size: 0px;
+}
+.next {
+	margin-top: -22px;
+}
+.like__icon {
+	width: 25px;
+	height: 24px;
+	background-image: url(../img/like-btn.png);
+	margin-right: 10px;
+	transition: all 2s;
+}
+.like__icon:hover {
+	background-image: url(../img/like-hover-btn.png);
+}
+.number .current,
+.number .next {
+	height: 22px;
+	font-size: 19px;
+	font-weight: bold;
+}
+.gallery__item {
+	display: inline-block;
+}
+.gallery__like-wrapper {
+	text-align: center;
+}
+
+/**********BANNER****************/
+.banner {
+	background-image: url(../img/bg1.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 611px;
+}
+.banner__marks {
+	margin: 0 auto;
+	margin-bottom: 80px;
+	text-align: center;
+	position: relative;
+}
+.banner__like,
+.banner__mileage,
+.banner__km {
+	display: inline-block;
+}
+.banner__like {
+	position: absolute;
+	top: 130px;
+	left: 35px;
+	width: 110px;
+	height: 110px;
+	border-radius: 50%;
+	background-color: #ff9c00;
+	line-height: 135px;
+	text-align: center;
+}
+.banner__like img {
+	display: inline-block;
+	
+}
+
+.banner__mileage {
+	
+	font-size: 248px;
+	color: #fff;
+	
+}
+.banner__km {
+	position: absolute;
+	top: 130px;
+	right: 35px;
+	width: 110px;
+	height: 110px;
+	border-radius: 50%;
+	background-color: #B0CE2E;
+	font-size: 30px;
+	color: #fff;
+	line-height: 110px;
+	text-align: center;
+}
+.banner__title,
+.banner__info {
+	text-align: center;
+	color: #fff;
+}
+.banner__title {
+	font-size: 50px;
+	line-height: 49px;
+}
+.banner__info {
+	font-size: 19px;
+	line-height: 27px;
+	width: 787px;
+	margin: 0 auto;
+}
+/*внешние стили*/
+.counter {
+	display: block;
+    padding: 0px 37px;
+    float:left;
+    font-size: 248px;
+    line-height: 248px;
+    z-index: 3;
+}
+
+.counter span.digit {
+    
+    color: #FFF;
+    display: block;
+    float: left;
+    height: 350px;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 135px;
+}
+
+.counter span.digit span {
+	font-family: Bebas;
+    line-height: 350px;
+    height: 350px;
+    position:relative;
+    top: 0;
+    
 }
 
 
 
+
+/*конец внешних стилей*/

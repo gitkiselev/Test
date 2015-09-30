@@ -27,17 +27,17 @@
 	<script src="js/jquery-1.11.3.min.js"></script>
 	<script src="js/modernizr.custom.55616.js"></script>
 	<script src="js/script.js"></script>
-	<!--<script src="js/new-file.js"></script>-->
+	<script src="js/counter.js"></script>
 </head>
 <body>
 
 	<div class="wrapper">
 		<div class="header">
-			<div class="container">
+			<div class="container clearfix">
 				<div class="header__logo">
 					<img src="img/logo.png" alt ="">
 				</div>
-				<div class="header__services">
+				<div class="header__services inb-null">
 					<div class="search">
 						<div class="search__title"><a class="search__link" href="">Быстрый поиск</a></div>
 						<div class="search__info">Ищите по всему сайту</div>
@@ -53,31 +53,53 @@
 				</div>
 			</div><!--end container -->
 		</div>
-		<div class="container">
-			<div class="header-nav">
-				<nav>
-					<ul class="header__list">
-						<li class="header__item"><a class="header__link" href="">Форум</a></li>
-						<li class="header__item"><a class="header__link" href="">Блоги</a></li>
-						<li class="header__item"><a class="header__link" href="">Библиотека</a></li>
-						<li class="header__item"><a class="header__link" href="">FAQ</a></li>
-						<li class="header__item"><a class="header__link" href="">Конкурсы</a></li>
-						<li class="header__item"><a class="header__link" href="">Фото пользователей</a></li>
+		<div class="header-nav">
+			<div class="container">
+				<nav class="clearfix">
+					<ul class="header-nav__list">
+						<li class="header-nav__item"><a class="header-nav__link" href="">Форум</a></li>
+						<li class="header-nav__item"><a class="header-nav__link" href="">Блоги</a></li>
+						<li class="header-nav__item"><a class="header-nav__link" href="">Библиотека</a></li>
+						<li class="header-nav__item"><a class="header-nav__link" href="">FAQ</a></li>
+						<li class="header-nav__item"><a class="header-nav__link" href="">Конкурсы</a></li>
+						<li class="header-nav__item"><a class="header-nav__link" href="">Фото пользователей</a></li>
+					</ul>
+				</nav>
+				<nav class="clearfix">
+					<ul class="header-nav__promo-list">
+						<li class="header-nav__promo-item"><a class="header-nav__promo-link" href="">О Polo седан</a></li>
+						<li class="header-nav__promo-item"><a class="header-nav__promo-link" href="">Volkswagen Bonus</a></li>
 					</ul>
 				</nav>
 			</div>
 		</div><!--end container -->
 		<div class="banner">
 			<div class="container">
-				<div class="banner__info">
+				<div class="banner__marks inb-null">
 					<div class="banner__like"><img src="img/like-only.png" alt="like"></div>
-					<div class="banner__mileage">0998</div>
-					<div class="ифттук__km">Км</div>
+					<div class="banner__mileage">
+						<span class="counter">
+							<span class="digit">
+					        	<span title="8">8</span>
+						    </span>
+						    <span class="digit">
+						        <span title="5">4</span> 
+						    </span>
+						    <span class="digit">
+						        <span title="1">7</span>
+						    </span>
+						    <span class="digit">
+						        <span title="2">8</span>
+						    </span>
+						</span>
+					</div>
+					<div class="banner__km">Км</div>
 				</div>
+				<h1 class="banner__title">Меняй лайки на километры!</h1>
+				<p class="banner__info">Polo собирает друзей: выиграй большой тест-драйв вместе со своим другом!<br>
+						Набери максимальное количество лайков и обменяй их на километры с новым VW Polo!</p>
 			</div>
-			<div class="container"><h1 class="banner__title">Меняй лайки на километры</h1></div>
-			<div class="container"><p class="banner__info">Polo собирает друзей: выиграй большой тест-драйв вместе со своим другом!
-			Набери максимальное количество лайков и обменяй их на километры с новым VW Polo!</p></div>
+			
 		</div>
 		<div class"action">
 			<div class="container">
@@ -133,7 +155,10 @@
 						<div class="gallery__like-wrapper">
 							<div class="like">
 								<div class="like__icon"></div>
-								<div class="like__sum">341</div>
+								<div class="number">
+									<div class="current">858</div>
+									<div class="next"></div>
+								</div>
 							</div>
 						</div>
 						<div class="gallery__share">
@@ -312,7 +337,7 @@
 								<div class="like__sum">341</div>
 							</div>
 						</div>
-						
+
 						<div class="gallery__share">
 							<div class="">Поделиться:</div>
 							<div class=""><a href=""><img src="img/vk.png" alt=""></a></div>
@@ -412,6 +437,6 @@
 				<div class="like" href="">Нравится</div>
 				<div class="number">152</div>
 			</div>
-	
+			<div class=""></div>
 </body>
 </html>
