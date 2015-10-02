@@ -223,12 +223,7 @@ ul {
 	font-size: 19px;
 	font-weight: bold;
 }
-.gallery__item {
-	display: inline-block;
-}
-.gallery__like-wrapper {
-	text-align: center;
-}
+
 
 /**********BANNER****************/
 .banner {
@@ -236,12 +231,13 @@ ul {
 	background-repeat: no-repeat;
 	background-position: center top;
 	height: 611px;
+	margin-bottom: 50px;
 }
 .banner__marks {
 	margin: 0 auto;
 	margin-bottom: 80px;
 	text-align: center;
-	position: relative;
+	position: relative;/*для привязки картинок*/
 }
 .banner__like,
 .banner__mileage,
@@ -291,8 +287,12 @@ ul {
 .banner__title {
 	font-size: 50px;
 	line-height: 49px;
+	position: relative;/*вытаскиваем вперед*/
+	z-index: 1;/*OK Если 0 то под картинкой*/
 }
 .banner__info {
+	position: relative;
+	z-index: 1;
 	font-size: 19px;
 	line-height: 27px;
 	width: 787px;
@@ -326,11 +326,210 @@ ul {
     line-height: 350px;
     height: 350px;
     position:relative;
-    top: 0;
-    
+    top: 0;  
+}
+/*конец внешних стилей*/
+.banner__image-front {
+	position: absolute;
+	width: 938px;
+	height: 445px;
+	top: 166px;
+	left: 1px;
+	z-index: 1;
 }
 
+/**********ACTION****************/
+.action {
+	margin-bottom: 50px;
+}
+.action__list {
+	/*text-align: center;/*если оставим здесь, в других местах
+	дочерних элементов можем убрать*/
+}
+.action__item {
+	display: inline-block;
+	width: 300px;
+	margin-right: 20px;
+	vertical-align: top;
+	/*text-align: center;/*если потомок inline-block*/
+}
+.action__item:last-child {
+	margin-right: 0;
+}
+.action__img-wrapper {
+	/*isplay: inline-block;/*родителю text-align: center*/
+	width: 275px;/*по самой большой ширине*/
+	margin: 0 auto 35px;/*выровним по цетру лишки*/
+	height: auto;
+	text-align: center;/*для фото, чтоб по центру внутри контейнера*/
+}
+.action__img-wrapper img {
+	
+}
+.action__info {
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 22px;
+	text-align: center;
+}
+.action__info a {
+	color: #124e9c;
+	transition: all 1s;/*text-decoration не предназначено*/
+}
+.action__info a:hover {
+	color: black;
+	text-decoration: none;
+}
+.action__info span {
+	color: #B0B0B0;
+}
+/***************RESULTS*******************/
+.results {
+	margin-bottom: 41px;
+}
+.results .container {
+	background-color: #1CB6F2;
+	min-height: 177px;/*чтобы можно добавлять текст*/
+	text-align: center;
+	padding: 34px 0;
+}
+.results__title,
+.results__info {
+	font-size: 19px;
+	line-height: 27px;
+}
+.results__title {
+	position: relative;
+	color: #fff;
+	margin: 0 auto 40px;/*еще вернемся*/
+	width: 764px;/*решил <br> убрать задав
+	 требуемую ширину и margin: 0 auto*/
+}
+.results__title:after {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 114px;
+	height: 2px;
+	background-color: #49c5f4;
+	top: 73px;
+	margin: 0 325px;
+}
+.results__info {
+	color: #000;
+}
 
+/*********SORTING**************/
+.sorting {
+	margin-bottom: 44px;
+}
+.sorting__wrapper {
+	width: 550px;/*********/
+	margin: 0 auto;
+}
+.sorting__by {
+	display: inline-block;
+	color: #000;
+	font-size: 14px;
+	line-height: 22px;
+	width: 111px;/*при 108 в FF40 недостаточно*/
+	margin: 0 18px 0 55px;
+}
+.sorting__btn {
+	color: #124E9C;
+	border-bottom: 1px dashed #124e9c;
+	font-size: 14px;
+	line-height: 22px;
+	padding: 6px 0px 1px;
+	margin: 0 14px;
+	transition: color 0.5s;
+}
+.sorting__btn:last-child {
+	margin-right: 0;
+}
+.sorting__btn:hover {
+	color: #fff;
+	padding: 6px 14px;
+	margin: 0;
+	background-color: #f28500;
+	border-bottom: none;
+	border-radius: 2px;
+	cursor: pointer;
+}
+.sorting__btn--active {
+	color: #fff;
+	padding: 6px 14px;
+	margin: 0;
+	background-color: #f28500;
+	border-bottom: none;
+	border-radius: 2px;
+}
 
+/**********UPLOADING***************/
+.uploading {
+	margin-bottom: 44px;
+}
+.uploading__wrapper {
+	text-align: center;
+}
+.uploading__btn {
+	display: block;
+	height: 64px;
+	border: 2px dashed #E3E3E3;
+	line-height: 64px;
+	text-decoration: none;
+	color: #124E9C;
+	font-size: 16px;
+	font-weight: bold;
+	transition: border 1s;
+	background-image: url(../img/my-upload.png);
+	background-repeat: no-repeat;
+	background-position: 590px center;
+}
+.uploading__btn:hover {
+	border: 2px dashed #8E8E8E;
+}
 
-/*конец внешних стилей*/
+/*********GALLERY************/
+.gallery {
+	margin-bottom: 50px;
+}
+.gallery__list {
+	/*margin-right: -38px; не будем так, это для IE8*/
+	width: 100%;
+}
+.gallery__item {
+	display: inline-block;
+	width: 300px;
+	margin-right: 20px;
+}
+.gallery__item:nth-child(3n+3) {
+	margin-right: 0;
+}
+.gallery__like-wrapper {
+	text-align: center;
+}
+.gallery__title {
+	
+}
+.gallery__date {
+	float: left;
+	font-size: 14px;
+	line-height: 22px;
+	color: #B0B0B0;
+}
+.gallery__owner {
+	float: right;
+	
+	font-size: 14px;
+	line-height: 22px;
+	color: #B0B0B0;
+}
+.gallery__owner span {
+	float: right;
+	margin-left: 3px;
+	font-size: 14px;
+	line-height: 22px;
+	color: #124E9C;
+	text-decoration: underline;
+}

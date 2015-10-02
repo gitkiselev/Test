@@ -1,6 +1,4 @@
-$(document).ready(function(){
-
-	(function($){
+;(function($){
     /*
         Function: initCounter
 
@@ -51,8 +49,14 @@ $(document).ready(function(){
 
         $digit.animate({
             top: '+=' + $display.height() + 'px'
-        }, 100, function(){
-            
+        }, 500, function(){
+            // Repeat the animation on a semi-random interval
+            if($display.index('.counter .digit') == $counter.find('.digit').length - 1){
+                setTimeout(function(){
+                    animateDigit($display, e);
+                }, 500);
+            }
+
             // If we've reached the end of the counter, loop back to the top
             if(parseInt($digit.css('top')) > -1 * parseInt($display.height())){
                 $digit.css({
@@ -66,6 +70,3 @@ $(document).ready(function(){
         initCounter($('.counter'), $.Event('load'));
     });
 })(jQuery);
-
-});
-	
